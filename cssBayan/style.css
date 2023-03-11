@@ -53,6 +53,7 @@ body {
   justify-content: space-between;
   font-size: 1rem;
   color: #960000;
+  transition: all ease-in-out 0.3s;
 }
 
 .tab__img-container {
@@ -62,6 +63,7 @@ body {
 }
 
 .tab__img {
+  width: 21.8rem;
   max-width: 100%;
   max-height: 0rem;
   transform: scale(0);
@@ -70,6 +72,7 @@ body {
 
 .tab__icon {
   visibility: visible;
+  transition: all ease-in-out 0.3s;
 }
 
 .tab__select-icon {
@@ -93,10 +96,6 @@ body {
 .tab__input:checked ~ .tab__content .tab__icon {
   transform: rotate(45deg);
 }
-
-/* .tab__label:active > .tab__content {
-  color: #960000;
-} */
 
 @media (min-width: 51.25rem) {
   .title {
@@ -151,6 +150,7 @@ body {
 
   .tab__label:active > .tab__content {
     color: #960000;
+    opacity: 0.7;
   }
 
   .tab__label:active > .tab__img-container .tab__img {
