@@ -7,8 +7,10 @@
 }
 
 body {
-  background-color: #fff1df;
+  background-color: #fff7ec;
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: #00000000;
 }
 
 .wrapper {
@@ -27,7 +29,6 @@ body {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid rgb(190, 190, 190);
-  cursor: pointer;
 }
 
 .tab__label {
@@ -49,7 +50,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
-  color: #2247ff;
+  color: #960000;
 }
 
 .tab__img-container {
@@ -59,29 +60,14 @@ body {
 }
 
 .tab__img {
+  max-width: 100%;
   max-height: 0px;
   transform: scale(0);
   transition: transform 0.5s ease-out;
-  margin-right: 20px;
 }
 
 .tab__icon {
-  visibility: hidden;
-}
-
-.tab__input:checked ~ .tab__img-container .tab__img,
-.tab:hover .tab__img {
-  max-height: 500px;
-  transform: scale(1);
-  padding: 15px;
-}
-
-.tabs:hover .tab__content {
-  color: #000000;
-}
-
-.tab__input:checked ~ .tab__content {
-  color: #000000;
+  visibility: visible;
 }
 
 .tab__select-icon {
@@ -92,12 +78,22 @@ body {
   border-radius: 50%;
 }
 
-.tab__label:active > .tab__img-container .tab__select-icon {
-  visibility: visible;
+.tab__input:checked ~ .tab__img-container .tab__img {
+  max-height: 500px;
+  transform: scale(1);
+  padding: 15px;
+}
+
+.tab__input:checked ~ .tab__content {
+  color: #000000;
+}
+
+.tab__input:checked ~ .tab__content .tab__icon {
+  transform: rotate(45deg);
 }
 
 .tab__label:active > .tab__content {
-  color: #2247ff;
+  color: #960000;
 }
 
 .tab__label:active > .tab__img-container .tab__img {
@@ -105,11 +101,37 @@ body {
   transform: scale(0.99);
 }
 
-.tabs:hover .tab__icon {
-  visibility: visible;
+@media (min-width: 820px) {
 }
 
-.tab:hover .tab__icon,
-.tab__input:checked ~ .tab__content .tab__icon {
-  transform: rotate(45deg);
+@media (min-width: 1920px) {
+  .tab__img {
+    margin-right: 20px;
+  }
+
+  .tab__icon {
+    visibility: hidden;
+  }
+
+  .tab__label:active > .tab__img-container .tab__select-icon {
+    visibility: visible;
+  }
+
+  .tab:hover .tab__img {
+    max-height: 500px;
+    transform: scale(1);
+    padding: 15px;
+  }
+
+  .tabs:hover .tab__content {
+    color: #000000;
+  }
+
+  .tabs:hover .tab__icon {
+    visibility: visible;
+  }
+
+  .tab:hover .tab__icon {
+    transform: rotate(45deg);
+  }
 }
