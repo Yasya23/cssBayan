@@ -14,21 +14,22 @@ body {
 }
 
 .wrapper {
-  max-width: 700px;
+  max-width: 44rem;
   margin: 0 auto;
-  padding: 10px;
+  padding: 2%;
   font-weight: 600;
 }
 
 .title {
-  padding: 10px 0;
-  border-bottom: 1px solid rgb(190, 190, 190);
+  font-size: 2rem;
+  padding: 0.8rem 0;
+  border-bottom: 0.09rem solid rgb(190, 190, 190);
 }
 
 .tab {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid rgb(190, 190, 190);
+  border-bottom: 0.09rem solid rgb(190, 190, 190);
 }
 
 .tab__label {
@@ -39,17 +40,18 @@ body {
 }
 
 .tab__input {
-  width: 1px;
-  height: 1px;
+  width: 0.05rem;
+  height: 0.05rem;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  opacity: 0;
 }
 
 .tab__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
+  font-size: 1rem;
   color: #960000;
 }
 
@@ -61,7 +63,7 @@ body {
 
 .tab__img {
   max-width: 100%;
-  max-height: 0px;
+  max-height: 0rem;
   transform: scale(0);
   transition: transform 0.5s ease-out;
 }
@@ -72,16 +74,16 @@ body {
 
 .tab__select-icon {
   visibility: hidden;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #515151;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.09rem solid #515151;
   border-radius: 50%;
 }
 
 .tab__input:checked ~ .tab__img-container .tab__img {
-  max-height: 500px;
+  max-height: 31rem;
   transform: scale(1);
-  padding: 15px;
+  padding: 1rem;
 }
 
 .tab__input:checked ~ .tab__content {
@@ -101,26 +103,37 @@ body {
   transform: scale(0.99);
 }
 
-@media (min-width: 820px) {
+@media (min-width: 51.25rem) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .tab__content {
+    font-size: 1.4rem;
+  }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 60rem) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .tab__content {
+    font-size: 1.6rem;
+  }
+
   .tab__img {
-    margin-right: 20px;
+    margin-right: 2%;
   }
 
   .tab__icon {
     visibility: hidden;
   }
 
-  .tab__label:active > .tab__img-container .tab__select-icon {
-    visibility: visible;
-  }
-
   .tab:hover .tab__img {
-    max-height: 500px;
+    max-height: 31rem;
     transform: scale(1);
-    padding: 15px;
+    padding: 1rem;
   }
 
   .tabs:hover .tab__content {
@@ -133,5 +146,13 @@ body {
 
   .tab:hover .tab__icon {
     transform: rotate(45deg);
+  }
+
+  .tab__label:active > .tab__img-container .tab__select-icon {
+    visibility: visible;
+  }
+
+  .tab__label:active > .tab__content {
+    color: #960000;
   }
 }
