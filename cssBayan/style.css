@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+body {
+  background-color: #fff7ec;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: #00000000;
+}
+
+.wrapper {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2%;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 2rem;
+  padding: 0.8rem 0;
+  border-bottom: 0.09rem solid #bebebe;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.09rem solid #bebebe;
+}
+
+.tab__label {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tab__input {
+  width: 0.05rem;
+  height: 0.05rem;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  opacity: 0;
+}
+
+.tab__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #960000;
+  transition: all ease-in-out 0.3s;
+}
+
+.tab__img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab__img {
+  width: 21.8rem;
+  max-width: 100%;
+  max-height: 0rem;
+  transform: scale(0);
+  transition: transform 0.5s ease-out;
+}
+
+.tab__icon {
+  visibility: visible;
+  transition: all ease-in-out 0.3s;
+}
+
+.tab__select-icon {
+  visibility: hidden;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.09rem solid #515151;
+  border-radius: 50%;
+}
+
+.tab__input:checked ~ .tab__img-container .tab__img {
+  max-height: 31rem;
+  transform: scale(1);
+  padding: 1rem;
+}
+
+.tab__input:checked ~ .tab__content {
+  color: #000000;
+}
+
+.tab__input:checked ~ .tab__content .tab__icon {
+  transform: rotate(45deg);
+}
+
+@media (min-width: 51.25rem) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .tab__content {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 120rem) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .tab__content {
+    font-size: 1.8rem;
+  }
+
+  .tab__img {
+    margin-right: 2%;
+  }
+}
+
+@media (hover: hover) {
+  .tab__icon {
+    visibility: hidden;
+  }
+
+  .tab:hover .tab__img {
+    max-height: 31rem;
+    transform: scale(1);
+    padding: 1rem;
+  }
+
+  .tabs:hover .tab__content {
+    color: #000000;
+  }
+
+  .tabs:hover .tab__icon {
+    visibility: visible;
+  }
+
+  .tab:hover .tab__icon {
+    transform: rotate(45deg);
+  }
+
+  .tab__label:active > .tab__img-container .tab__select-icon {
+    visibility: visible;
+  }
+
+  .tab__label:active > .tab__content {
+    color: #960000;
+    opacity: 0.7;
+  }
+
+  .tab__label:active > .tab__img-container .tab__img {
+    opacity: 0.7;
+    transform: scale(0.99);
+  }
+}
